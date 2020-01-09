@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="标准票"
+        android:textColor="@color/md_black"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_weight="1"
+        android:text="￥60"
+        android:textColor="@color/md_grey_500"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+        app:layout_constraintStart_toEndOf="@+id/tvTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+
+    <LinearLayout
+        android:id="@+id/llQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvPrice">
+
+        <TextView
+            android:layout_marginStart="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前"
+            android:textColor="@color/md_grey_600"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tvQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="1"
+            android:textColor="@color/md_black"
+            android:textSize="26dp" />
+
+        <TextView
+            android:layout_marginEnd="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="张"
+            android:textColor="@color/md_grey_600"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvMinus1"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="-1"
+        android:textColor="@color/md_red_400"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPlus1"
+        app:layout_constraintEnd_toStartOf="@+id/tvPlus1"
+        app:layout_constraintTop_toTopOf="@+id/tvPlus1" />
+
+    <TextView
+        android:id="@+id/tvPlus1"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="+1"
+        android:textColor="@color/md_blue_600"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPlus5"
+        app:layout_constraintEnd_toStartOf="@+id/tvPlus5"
+        app:layout_constraintTop_toTopOf="@+id/tvPlus5" />
+
+    <TextView
+        android:id="@+id/tvPlus5"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:textColor="@color/md_blue_600"
+        android:text="+5"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPlus10"
+        app:layout_constraintEnd_toStartOf="@+id/tvPlus10"
+        app:layout_constraintTop_toTopOf="@+id/tvPlus10" />
+
+    <TextView
+        android:id="@+id/tvPlus10"
+        android:layout_width="50dp"
+        android:gravity="center"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="+10"
+        android:textSize="22dp"
+        android:textColor="@color/md_blue_600"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llQuantity" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+{
+  "orderId": "663037740165627904",
+  "sourceType": 11,
+  "payType": 4,
+  "payTypeName": "现金",
+  "quantity": 1,
+  "totalPrice": 0.01,
+  "travelDate": 1578067200000,
+  "createdDate": 1578122116000,
+  "status": 2,
+  "statusText": "已成交",
+  "detailInfoList": [
+    {
+      "productId": "623976897520336896",
+      "productName": "活动门票",
+      "quantity": 1,
+      "printQuantity": 1,
+      "ticketInfoList": [
+        {
+          "ticketId": "650777120418562048",
+          "title": "活动门票",
+          "ticketNo": "1000000880",
+          "printStatus": 1
+        }
+      ]
+    }
+  ]
+}

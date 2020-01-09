@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="420dp"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="0dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    app:cardElevation="1dp">
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="12dp"
+                android:background="@color/md_blue_600" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="系统设置"
+                android:textColor="@color/md_black"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/md_grey_300" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="接口地址"
+                android:textColor="@color/md_grey_700"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@+id/rllAddress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/rllAddress" />
+
+            <com.flyco.roundview.RoundLinearLayout
+                android:id="@+id/rllAddress"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:padding="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/lAddress"
+                app:layout_constraintTop_toTopOf="parent"
+                app:rv_isRadiusHalfHeight="true"
+                app:rv_strokeColor="@color/md_grey_300"
+                app:rv_strokeWidth="1dp">
+
+                <EditText
+                    android:id="@+id/etAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:textColor="@color/md_black"
+                    android:textSize="14dp" />
+
+            </com.flyco.roundview.RoundLinearLayout>
+
+            <TextView
+                android:id="@+id/lPwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="授权密码"
+                android:textColor="@color/md_grey_700"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@+id/rllPwd"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/rllPwd" />
+
+            <com.flyco.roundview.RoundLinearLayout
+                android:id="@+id/rllPwd"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="64dp"
+                android:layout_marginBottom="24dp"
+                android:padding="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/lPwd"
+                app:layout_constraintTop_toBottomOf="@+id/rllAddress"
+                app:rv_isRadiusHalfHeight="true"
+                app:rv_strokeColor="@color/md_grey_300"
+                app:rv_strokeWidth="1dp">
+
+                <EditText
+                    android:id="@+id/etPwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:inputType="textPassword"
+                    android:textColor="@color/md_black"
+                    android:textSize="14dp" />
+
+            </com.flyco.roundview.RoundLinearLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/md_grey_300" />
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/rtvModifyAddress"
+            android:layout_width="160dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="确认修改"
+            android:textColor="@color/md_white"
+            android:textSize="14dp"
+            app:rv_backgroundColor="@color/md_blue_600"
+            app:rv_isRadiusHalfHeight="true" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
+
