@@ -25,7 +25,6 @@ class LoginAct : BaseAct() {
 
     override fun initViews() {
 
-
         root.background = ContextCompat.getDrawable(this, R.mipmap.login_bg)
 
         fun restoreUserInfo() = with(UserInfo) {

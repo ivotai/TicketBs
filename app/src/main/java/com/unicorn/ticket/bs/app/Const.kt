@@ -6,8 +6,8 @@ const val defaultPageSize = 10
 
 val defaultPaddingDp = ConvertUtils.dp2px(16f)
 
-//const val baseUrl = "https://ts.csnbgsh.com/"
-const val baseUrl = "https://tstest.csnbgsh.com/"
+const val baseUrl = "https://ts.csnbgsh.com/"
+//const val baseUrl = "https://tstest.csnbgsh.com/"
 
 const val displayDateFormat = "yyyy年MM月dd日"
 
