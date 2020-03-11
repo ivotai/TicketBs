@@ -4,6 +4,7 @@ import com.unicorn.ticket.bs.app.Globals
 import com.unicorn.ticket.bs.app.defaultPageSize
 import com.unicorn.ticket.bs.data.model.*
 import io.reactivex.Single
+import org.joda.time.DateTime
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -70,4 +71,8 @@ interface SimpleApi {
 
     @POST("api/v1/pda/ticket/{ticketId}/finishPrint")
     fun finishPrint(@Path("ticketId") ticketId: String): Single<Response<Any>>
+
+    @GET("api/v1/pda/ticket/getInventory")
+    fun getInventory(@Query("travelDate") beginDate: String = DateTime().toString("yyyy-MM-dd")): Single<Int>
+
 }

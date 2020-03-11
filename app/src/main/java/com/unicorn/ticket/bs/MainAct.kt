@@ -17,6 +17,7 @@ import com.unicorn.ticket.bs.app.observeOnMain
 import com.unicorn.ticket.bs.app.safeClicks
 import com.unicorn.ticket.bs.data.event.ChangePagerEvent
 import com.unicorn.ticket.bs.data.event.FormFeed
+import com.unicorn.ticket.bs.data.event.GetInventoryEvent
 import com.unicorn.ticket.bs.data.model.SideMenuS
 import com.unicorn.ticket.bs.data.model.TakeTicketParam
 import com.unicorn.ticket.bs.data.model.Ticket
@@ -174,6 +175,14 @@ class MainAct : BaseAct() {
         RxBus.registerEvent(this, FormFeed::class.java, Consumer {
             formFeed()
         })
+        RxBus.registerEvent(this, GetInventoryEvent::class.java, Consumer {
+            api.getInventory()
+                .observeOnMain(this)
+                .subscribeBy {
+                    rtvTicketWindow.text = "总库存数：$it"
+                }
+        })
+        RxBus.post(GetInventoryEvent())
     }
 
     lateinit var tickets: List<Ticket>

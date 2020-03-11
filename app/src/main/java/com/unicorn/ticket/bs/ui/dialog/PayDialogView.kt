@@ -21,6 +21,7 @@ import com.unicorn.ticket.bs.app.helper.DialogHelper.showMask
 import com.unicorn.ticket.bs.app.helper.ExceptionHelper
 import com.unicorn.ticket.bs.app.observeOnMain
 import com.unicorn.ticket.bs.app.safeClicks
+import com.unicorn.ticket.bs.data.event.GetInventoryEvent
 import com.unicorn.ticket.bs.data.event.RestoreEvent
 import com.unicorn.ticket.bs.data.model.*
 import com.unicorn.ticket.bs.ui.adapter.PayTypeSAdapter
@@ -100,6 +101,7 @@ class PayDialogView(private val mContext: Context, sum: Double, private val orde
                     constraintLayout1.visibility = View.INVISIBLE
                     constraintLayout2.visibility = View.VISIBLE
                     if (SystemInfo.autoPrint) RxBus.post(TakeTicketParam(orderId))
+                    RxBus.post(GetInventoryEvent())
                 },
                 onError = {
                     mask.dismiss()
