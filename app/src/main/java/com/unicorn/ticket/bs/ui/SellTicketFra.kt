@@ -18,6 +18,7 @@ import com.unicorn.ticket.bs.data.event.SumChangeEvent
 import com.unicorn.ticket.bs.data.model.CreateOrderParam
 import com.unicorn.ticket.bs.data.model.ProductQ
 import com.unicorn.ticket.bs.data.model.ProductS
+import com.unicorn.ticket.bs.data.model.TakeTicketParam
 import com.unicorn.ticket.bs.ui.adapter.ProductQAdapter
 import com.unicorn.ticket.bs.ui.adapter.ProductSAdapter
 import com.unicorn.ticket.bs.ui.base.BaseFra
@@ -90,7 +91,12 @@ class SellTicketFra : BaseFra() {
                         onSuccess = {
                             mask.dismiss()
                             if (it.failed) return@subscribeBy
-                            showPayDialog(it.data.orderId)
+                            if (createOrderParam.totalPrice != 0.0)
+                                showPayDialog(it.data.orderId)
+                            else {
+                                RxBus.post(RestoreEvent())
+                                RxBus.post(TakeTicketParam(orderId = it.data.orderId))
+                            }
                         },
                         onError = {
                             mask.dismiss()
