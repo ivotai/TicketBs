@@ -41,7 +41,7 @@ class OrderDetailDialogView(private val mContext: Context, order: Order) :
 
         recyclerView.apply {
             layoutManager = LinearLayoutManager(mContext)
-            adapter  = ticketInfoAdapter
+            adapter = ticketInfoAdapter
             addItemDecoration(LinearSpanDecoration(ConvertUtils.dp2px(16f)))
         }
     }
@@ -55,6 +55,7 @@ class OrderDetailDialogView(private val mContext: Context, order: Order) :
         val list = when (order.status) {
             1, 8, 9, 10 -> listOf(updateStatus)
             2 -> listOf(printAll, printRemain, cancel, refund)
+            15 -> listOf(updateStatus, printAll, printRemain)
             else -> listOf()
         }
         MaterialDialog(mContext).show {
